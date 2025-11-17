@@ -55,3 +55,7 @@ sky:
   wechat:
     appid: ${sky.wechat.appid}
     secret: ${sky.wechat.secret}
+  shop:
+    address: 江西省南昌市新建区双港东大街808号华东交通大学北区33栋2-620
+  baidu:
+    ak: jlqSaLR7dIDoI889d3EdUwc9f9cvOHl0
