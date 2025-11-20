@@ -278,16 +278,16 @@ public class OrderServiceImpl implements OrderService {
         orderMapper.updateStatus(OrderStatus, OrderPaidStatus, check_out_time, orderNumber);
 
 
-        Map map = new HashMap();
-        map.put("type", 1);// 消息类型，1表示来单提醒
-//获取订单id
-        Orders orders = orderMapper.getByNumberAndUserId(orderNumber, userId);
-        map.put("orderId", orders.getId());
-        map.put("content", "订单号：" + orderNumber);
-
-// 通过WebSocket实现来单提醒，向客户端浏览器推送消息
-        webSocketServer.sendToAllClient(JSON.toJSONString(map));
-        log.info("来单提醒：{}", JSON.toJSONString(map));
+//        Map map = new HashMap();
+//        map.put("type", 1);// 消息类型，1表示来单提醒
+////获取订单id
+//        Orders orders = orderMapper.getByNumberAndUserId(orderNumber, userId);
+//        map.put("orderId", orders.getId());
+//        map.put("content", "订单号：" + orderNumber);
+//
+//// 通过WebSocket实现来单提醒，向客户端浏览器推送消息
+//        webSocketServer.sendToAllClient(JSON.toJSONString(map));
+//        log.info("来单提醒：{}", JSON.toJSONString(map));
         return vo;
     }
 
